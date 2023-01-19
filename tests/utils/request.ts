@@ -1,4 +1,4 @@
-import request from 'supertest';
+import request from 'supertest'
 import listen from '../../src/httpServer'
 
-export default request(listen());
+export default request(listen())
