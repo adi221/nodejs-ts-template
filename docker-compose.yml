@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  example:
+    container_name: backend
+    build: ./
+    command: npm start
+    working_dir: /home/node/example
+    ports:
+      - 8080:8080
+    volumes:
+      - '/home/node/app/node_modules'
+      - ./:/home/node/example
