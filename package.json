@@ -10,8 +10,8 @@
     "lint": "eslint --ext .ts .",
     "start-dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
     "start": "cross-env NODE_ENV=production node dist/index.js",
-    "test": "jest",
-    "test-compose": "cross-env NODE_ENV=test docker-compose -f docker-compose.test.yml up -d && jest --runInBand --forceExit --coverage && cat ./coverage/lcov.info | coveralls",
+    "test": "jest --runInBand --forceExit --coverage",
+    "test-compose": "cross-env NODE_ENV=test docker-compose -f docker-compose.test.yml up -d && npm test && cat ./coverage/lcov.info | coveralls",
     "build": "tsc"
   },
   "dependencies": {
